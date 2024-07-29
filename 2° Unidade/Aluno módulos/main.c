@@ -1,26 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "aluno.c"
+#include "aluno.h"
 
 int main(){
 
-Aluno * aluno = (Aluno*)malloc(sizeof(Aluno));
-if (aluno == NULL){
-    exit (1);
-    }
-
-preenche(aluno);
-imprime(aluno);
-free(aluno);
+Aluno * aluno = aloca_aluno(); //aloca
+preenche(aluno); //preenche
+imprime(aluno); //imprime 
+free(aluno); //libera memoria 
 
     return 0;
 }
 
 /*
 Os mósulos peermitem "esconder" as imformações das funções.
-Para compilar gcc -c aluno.c, 
+Para compilar:
+gcc -c aluno.c, 
 gcc -c main.c,
-gcc -o main.exe aluno.o main.o,
+gcc -o main.exe aluno.c main.c,
 gcc main.c -o main, 
 ./main
 */
