@@ -17,7 +17,7 @@ Os mósulos peermitem "esconder" as imformações das funções.
 Para compilar:
 gcc -c aluno.c, 
 gcc -c main.c,
-gcc -o main.exe aluno.c main.c,
+gcc -o main.exe aluno.o main.o,
 gcc main.c -o main, 
 ./main
 */
