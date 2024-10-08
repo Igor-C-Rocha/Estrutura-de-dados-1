@@ -76,6 +76,8 @@ No * busca(No * lista, char * nome){
     No* aux = lista;
     int inf;
         for(aux; aux != NULL; aux = aux->prox){
+            printf("qual jogo quer encontrar: \n");
+                scanf("%c", nome);
     inf = strcmp(aux->Jogo->nome, nome);    
             if(inf == 0){
                 printf("\n");

@@ -11,7 +11,7 @@
 #define TITULO_OPCAO4 "Adicionar Sessao"
 #define TITULO_OPCAO5 "Remover Sessao"
 #define TITULO_OPCAO6 "Listar Sessoes"
-#define TITULO_OPCAO7 "Salvar Sessoes"
+#define TITULO_OPCAO7 "Buscar Jogo"
 #define TITULO_OPCAO8 "Saida do programa"
 
 #define N_OPCOES 8

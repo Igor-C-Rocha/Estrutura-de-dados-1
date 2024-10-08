@@ -96,7 +96,8 @@ int main(){
 
             case OPCAO7:{
                 Beep(1000, 500);
-                salvar(lista_jogos);
+                char nome[50];
+                lista_jogos = busca(lista_jogos, nome);
                 delay();
                 limparTerminal();
                 break;

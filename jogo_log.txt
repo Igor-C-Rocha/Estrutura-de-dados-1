@@ -1,0 +1,1 @@
+Nome: q, Tipo: q, Preço: 2.0, Gênero: q
