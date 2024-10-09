@@ -19,7 +19,6 @@ int main(){
 
         switch (op){
             case OPCAO1:{
-                Beep(1000, 500);
                 char nome[50], tipo[50], genero[50];
                 float preco;
                 printf("---------------------\n");
@@ -32,13 +31,13 @@ int main(){
                 scanf("%s", genero);
                 printf("---------------------\n");
                 lista_jogos = adicionar(lista_jogos, nome, tipo, preco, genero);
+                salvar(lista_jogos);
                 delay();
                 limparTerminal();
                 break;
             }
 
             case OPCAO2:{
-                Beep(1000, 500);
                 char nome[50];
                 printf("---------------------\n");
                 printf("Digite o nome do jogo a ser removido: \n");
@@ -51,7 +50,6 @@ int main(){
             }
 
             case OPCAO3:{
-                Beep(1000, 500);
                 editar(lista_jogos);
                 delay();
                 limparTerminal();
@@ -59,7 +57,6 @@ int main(){
             }
 
             case OPCAO4:{
-                Beep(1000, 500);
                 char nome[50], descricao[250];
                 printf("---------------------\n");
                 printf("Nome da sessao: \n");
@@ -74,7 +71,6 @@ int main(){
             }
 
             case OPCAO5:{
-                Beep(1000, 500);
                 char nome[50];
                 printf("---------------------\n");
                 printf("Digite o nome da sessao a ser removida: \n");
@@ -87,7 +83,6 @@ int main(){
             }
 
             case OPCAO6:{
-                Beep(1000, 500);
                 listar_sessoes(lista_sessoes);
                 delay();
                 limparTerminal();
@@ -95,7 +90,6 @@ int main(){
             }
 
             case OPCAO7:{
-                Beep(1000, 500);
                 char nome[50];
                 lista_jogos = busca(lista_jogos, nome);
                 delay();
@@ -104,7 +98,6 @@ int main(){
             }
 
             case OPCAO8:{
-                Beep(1000, 500);
                 printf("---------------------\n");
                 printf("Saindo...\n");
                 saida = 1;

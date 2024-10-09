@@ -60,9 +60,9 @@ No* tira(No * lista, char * nome){
             }else{
                 ant->prox = aux->prox;
             }
+    printf("\nJogo removido");
     free(aux->Jogo);
     free(aux);
-    printf("\nJogo removido");
     return lista;
         }
         ant = aux;
@@ -82,11 +82,29 @@ No * busca(No * lista, char * nome){
             if(inf == 0){
                 printf("\n");
                 printf("jogo encontrado: %s\n", aux->Jogo->nome);
-                return aux;
+                printf("Nome: %s, Genero: %s, Valor: %.2f, Tipo: %s\n", aux->Jogo->nome, aux->Jogo->genero, aux->Jogo->preco, aux->Jogo->tipo);
+                return 0;
             }
         }
     printf("jogo nao existente\n");
     return NULL;
+}
+
+No * busca2(No * lista , char * nome){
+    No* aux = lista;
+    int inf;
+    printf("qual jogo quer editar: \n");
+    scanf(" %[^\n]", nome); 
+    while(aux != NULL){     
+    inf = strcmp(aux->Jogo->nome, nome);  
+            if(inf == 0){
+                printf("Jogo %s encontrado \n", aux->Jogo->nome);
+            return aux;
+            }
+    aux = aux->prox;
+        }
+        printf("Jogo nao existe \n");
+    return NULL;        
 }
 
 void salvar(No * lista){
@@ -102,7 +120,6 @@ void salvar(No * lista){
     fprintf(arquivo, "Genero: %s\n", aux->Jogo->genero);
     fprintf(arquivo, "Valor: %.2f\n", aux->Jogo->preco);
     fprintf(arquivo, "---------------------\n");
-    printf("\n");
     aux = aux->prox;
     }
     fclose(arquivo);
@@ -112,16 +129,13 @@ void salvar(No * lista){
 void editar(No * lista){
     int op;
     char nome[50];
-            printf("Digite o nome do jogo que deseja editar: \n");
-        scanf("%s", nome);
-    No *jogo = busca(lista, nome);
+        printf("se nao quiser alterar aperte 0 \n");
+        scanf("%d", &op);
+            if(op == 0){return;} 
+    No *jogo = busca2(lista ,nome);
         if(jogo){
     char novo_nome[50], novo_tipo[50], novo_genero[50];
     float novo_preco;
-
-    printf("se nao quiser alterar aperte 1 \n");
-    scanf("%d", &op);
-        if(op == 1){return;}
     printf("Novo nome do jogo: \n");
     scanf("%c", &novo_nome);
     fgets(novo_nome, sizeof(novo_nome), stdin);
