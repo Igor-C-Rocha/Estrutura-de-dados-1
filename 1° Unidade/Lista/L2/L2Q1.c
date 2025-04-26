@@ -39,7 +39,7 @@ int main(){
 
     int N;
 
-    printf("Quantas pessoas foram entrevistadas? \n");
+    printf("Quantas pessoas foram entrevistadas!? \n");
         scanf("%d", &N);
 preenche_e_imprime(N);
 
